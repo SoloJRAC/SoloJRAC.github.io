@@ -401,6 +401,7 @@ body {
 }
 
 .popup .form_element {
+    color: #1c3c96;
     margin: 15px 0px;
 }
 
@@ -566,3 +567,4 @@ body {
 .add-user-diurno {
     color: #fff;
 }
+
