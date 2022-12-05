@@ -19,7 +19,7 @@ $datos2=mysqli_query($conection,$consulta);
 $passwordDB=mysqli_fetch_column($datos2);
 echo $passwordDB;
 if($passwordDB){
-     header("location:home.html"); 
+     header("location:Home.html"); 
     echo $passwordDB;
     
 }else{
