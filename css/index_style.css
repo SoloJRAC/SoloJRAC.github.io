@@ -1,0 +1,637 @@
+html {
+    scroll-behavior: smooth;
+    }
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #eeeeee;
+    
+}
+
+
+
+
+/*CSS para la barra de navegación*/
+
+.HeaderComponent {
+    position: fixed;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 100;
+    transition: 0.4s;
+}
+
+.HeaderComponent_Container {
+
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.HeaderComponent_Logo img {
+    border-right: 2px solid #fff;
+    padding-right: 6px;
+    object-fit: contain; 
+}
+
+.abajo .HeaderComponent_Logo img{
+    border-right: 2px solid #000000;
+}
+
+
+.texto_nav {
+    position: absolute;
+    left: 105px;
+    line-height:normal;
+    font-size: 0.625rem;
+    color: #fff;
+    cursor:default;
+}
+
+.abajo .texto_nav{
+    color: #000000;
+}
+
+.abajo {
+    background-color: #fff;
+    padding-top: 10px;
+    border-bottom:1px solid #000000;
+}
+
+
+.texto_nav p {
+    margin: 0;
+    padding: 0;
+}
+
+.hamburger {
+    display: none;
+}
+
+.menu_nav {
+    transition: 0.5s;
+  }
+
+.menu_nav ul {
+    display: flex;
+}
+
+.menu_nav ul a {
+    display: block;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin: 0 5px;
+    transition: 0.2s ease; 
+    cursor: pointer;
+}
+
+.abajo .menu_nav ul a{
+    color: #000000;
+}
+
+
+/* 
+.btn_color{
+    background-color: #00000000;
+    border-color: #00000000;
+    font-size: medium;
+}
+
+.abajo .btn_color{
+    color: #000000;
+}
+
+.btn_color:hover{
+    background-color: #3164f4;
+    color: #ffffff;
+}
+
+
+
+.menu_nav ul button {
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    transition: 0.2s ease; 
+} */
+
+
+.menu_nav ul a:hover {
+    color: #ffffff;
+    background-color: #3164f4; 
+     
+}
+
+.menu_nav ul a:active {
+    color: #ffffff;
+    background-color: #3164f4;
+}
+
+    
+
+
+/*tres lineas de la barra de navegacion*/
+@media only screen and (max-width: 900px) {
+    .hamburger
+    {
+        display: block;
+        cursor: pointer;
+        margin-right: 10px;
+
+    }
+    
+    .hamburger .line {
+        width: 30px;
+        height: 2px;
+        background: #ffffff;
+        margin: 6px;
+        
+    }
+    .abajo .hamburger .line{
+        background-color: #000000;
+    }
+
+    .menu_nav {
+        position:absolute;
+        height: 0;
+        top: 95px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #0e0e0e;
+        transition: 0.2;
+        overflow: hidden;
+    }
+
+    .abajo .menu_nav{
+        height: 0;
+        overflow: hidden;
+        top: 86px;
+        background: #0e0e0e;
+    }
+
+    .menu_nav ul {
+        display: block;
+        width: fit-content;
+        margin: 22px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        padding: 0;
+    }
+    
+    .menu_nav ul li a {
+        color: #ffffff;
+        margin-bottom: 12px;
+    }
+
+    .abajo .menu_nav ul li a {
+        color: #ffffff;
+        
+        margin-bottom: 12px;
+    }
+
+    .showmenu{
+        height: 300px;
+        background: #0e0e0e;
+        opacity: 1;
+        transition: 0.5s;
+        
+    }
+
+    .abajo .showmenu{
+        height: 300px;
+        background: #0e0e0e;
+        opacity: 1;
+        transition: 0.5s;
+        
+    }
+  
+    .hidemenu{
+        display: none;
+    }
+
+
+}
+
+
+/*Inicio del popup login*/
+
+.popup {
+    position:absolute;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 380px;
+    padding: 20px 30px;
+    background: #eeeeee;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 15);
+    border-radius: 10px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.popup.active {
+    top: 25vh;
+    opacity: 1;
+    transform: translate(-50%);
+    pointer-events: all;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #888;
+    color: #000000;
+    border: 1px solid #000000;
+    text-align:center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.popup .form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 1.5rem;
+}
+
+.popup .form_element {
+    margin: 15px 0px;
+}
+
+.popup .form_element label {
+    font-size: 0.875rem;
+    color:#222 ;
+}
+
+.popup .form_element input[type="text"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup .form_element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup .form_element input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+} 
+
+
+.popup .form .form_element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: #1c3c96;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.loginbtn{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: #1c3c96;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup .form .form_element a {
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    color: #1a79ca;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 900px) {
+    .popup {
+        width: 50%;
+    }
+}
+
+/*Fin del popup login*/
+
+
+
+/*CSS para la barra de navegación*/ 
+
+/*CSS para el main que contiene la imagen */
+
+.img_CTPP img {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; 
+}
+
+.arrow {
+    position: absolute;
+    top: 85%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow span {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -.4s;
+}
+
+@keyframes scroll {
+
+    0%{
+        opacity: 1;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+    
+}
+
+@media only screen and (max-width: 900px) {
+    .img_CTPP img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover; 
+    }
+
+    .arrow {
+        left: 90%; 
+    }
+}
+
+/*CSS para el main que contiene la imagen*/
+
+
+/*CSS para el main*/
+
+.Title_Home {
+    margin-top: 50px;
+    color: #1c3c96;
+    text-align: center;
+}
+
+.Title_Home  h2 {
+    font-size: 1.5rem;
+}
+
+.Subtitle_Mission_CTPP h3 {
+    font-size: 1.125rem;
+    color: #1c3c96;
+}
+
+.Subtitle_Vision_CTPP h3 {
+    font-size: 1.125rem;
+    color: #1c3c96;
+}
+
+
+.Subtitle_History_CTPP {
+    color: #1c3c96;
+}
+
+
+.Subtitle_MAP_CTPP {
+    color: #1c3c96;
+}
+
+.info_container {
+    margin-top: 5%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information1 {
+    margin-right: 10%;
+    max-width: 250px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.information2 {
+    margin-left: 10%;
+    max-width: 250px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background-color: #ffffff;
+ 
+}
+
+.information3 {
+    margin: 5%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.information4 {
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    margin: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.MAP_MAP_CTPP iframe {
+    min-height: 450px;
+    max-width: 100%; 
+    margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .info_container {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .information1 {
+        background-color: white;
+        margin-right: 0;
+        margin-bottom: 5%;
+    }
+    
+    .information2 {
+        background-color: #ffffff;
+        margin-left: 0;
+    }
+
+    
+ 
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+.read_more_btn{
+    border: #00000000;
+    color: #1a79ca;
+    background-color: #00000000;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.read_more_btn:hover{
+    background-color:#3164f4;
+    color: white;
+    padding: 0.5%;
+    transition: 0.2s;
+}
+.read_less_btn:hover{
+    background-color:#3164f4;
+    color: white;
+    padding: 0.5%;
+    transition: 0.2s;
+}
+.read_less_btn{
+    border: #00000000;
+    color: #1a79ca;
+    background-color: #00000000;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.hidebtn{
+    display: none;
+    opacity: 0;
+    
+}
+.showbtn{
+    display: block;
+    opacity: 1;
+    position: absolute;
+}
+
+/*CSS para el main*/
+
+
+/*CSS para el footer*/
+.Page_footer {
+    background-color: #0e0e0e;
+    color: #c1c1c1;
+}
+
+.Footer_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    
+
+}
+
+.Footer_contacts {
+    padding: 0;
+}
+
+.Footer_content a {
+    color: #c1c1c1;
+}
+
+.Footer_content a:hover {
+    color: #ffffff;
+}
+
+.Footer_bottom {
+    background: #000000;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/*CSS para el footer*/
+
+
+/* CSS para la oferta curricular */
+
+
+
+/* CSS para la oferta curricular */
+
+/* CSS para la table de Oferta curricular */
+
+.main-table {
+    background-color: #1c3c96;
+    color: #fff;
+}
+
+.Table-header {
+    color: #fff;
+    background-color: #1c3c96;
+}
+
+
+/* CSS para la table de Oferta curricular */
+

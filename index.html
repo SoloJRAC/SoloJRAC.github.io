@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="resources/ctpplogo.ico" type="favicon/ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CTP Parrita</title>
+</head>
+
+<body>
+    <main class="Page_content" id="Content" role="main">
+        <div class="Home_Page">
+
+
+            <!-- Inicio de la barra de navegación de la página WEB-->
+            <header class="HeaderComponent">
+                <div id="fondo">
+                    <div class="HeaderComponent_Container">
+                        <div class="HeaderComponent_Logo">
+                            <img src="resources/ctpplogo.png" alt="Escudo-Colegio" width="80" height="70">
+                        </div>
+                        <div class="texto_nav">
+                            <p>
+                                Colegio
+                            </p>
+                            <p>
+                                Técnico
+                            </p>
+                            <p>
+                                Profesional
+                            </p>
+                            <p>
+                                de Parrita
+                            </p>
+                        </div>
+                        <div id="hamburguer"  class="hamburger">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <nav id=menu_nav class="menu_nav">
+                            <ul id="opnav" class="hidemenu">
+                                <li>
+                                    <a href="#home">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="#arrow">Acerca</a>
+                                </li>
+                                <li>
+                                    <a href="#btn_text">Ubicación</a>
+                                </li>
+                                <li>
+                                    <a href="oferta-curricular.html">Oferta Curricular</a>
+                                </li>
+                                <li>
+                                    <a id=inicio >Ingresar</a>
+                                </li>
+                            </ul>
+                    </nav>
+
+            <div id=pop class="popup">
+                <form action="login.php" method="POST">
+                    <button id=hidepop , class="close-btn">X</button>
+                <div class="form">
+                    <h2>
+                        Iniciar sesión
+                    </h2>
+                    <div class="form_element">
+                        <label for="email">Usuario</label>
+                        <input type="text" id="Email" name="user"placeholder="Ingrese su usuario" required>
+                    </div>
+                    <div class="form_element">
+                        <label for="password">Contraseña</label>
+                        <input type="Password"name="password" id="password" placeholder="Ingrese su contraseña" required>
+                    </div>
+                    <div class="form_element">
+                        <input type="submit" value="Iniciar sesión" class="loginbtn">
+                    </div>
+                    <div class="form_element">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+                </form>
+                
+            </div>
+        </div>
+            </header>
+            <!-- Fin de la barra de navegación de la página WEB-->
+
+            <!--Inicio de la imagen antes del main de la página WEB-->
+            <section id="home">
+                <div class="img_CTPP">
+                    <img src="resources/background.png" alt="Fondo Colegio">
+                </div>
+                <div class="arrow" id="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            <!--Fin de la imagen antes del main-->
+
+
+
+            <section id="about_us">
+                <div class="Content_Home">
+                    <section class="PageSection">
+                        <div class="PageSection_content">
+                            <div class="Title_Home" id="Title_Home">
+                                <h2>Un poco sobre nosotros</h2>
+                            </div>
+                            <div class="row">
+                                <div class="info_container">
+                                    <div class="information1">
+                                        <article class="Mission_CTPP">
+                                            <div class="Subtitle_Mission_CTPP">
+                                                <h3>¿Quienes somos?</h3>
+                                            </div>
+                                            <div class="Paragraph_Mission_CTPP">
+                                                <p>
+                                                    Somos un colegio con la misión de brindar un servicio educativo de
+                                                    calidad mediante
+                                                    la implementación de la politica educativa en el ámbito
+                                                    institucional,
+                                                    propiciando la
+                                                    construcción del conocimiento, el fomento de los valores y el maximo
+                                                    aprovechamiento
+                                                    de los recursos disponibles.
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="information2">
+                                        <article class="Vision_CTPP">
+                                            <div class="Subtitle_Vision_CTPP">
+                                                <h3>¿Cual es nuestra vision?</h3>
+                                            </div>
+                                            <div class="Paragraph_Vision_CTPP">
+                                                <p>
+                                                    Nuestra visión consiste en formar profesionales con altos estándares
+                                                    de
+                                                    calidad
+                                                    que incursionen en el campo laboral, colaborando con el desarrollo y
+                                                    el
+                                                    progreso del pais.
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="information3">
+                                    <article class="History_CTPP">
+                                        <div class="Subtitle_History_CTPP">
+                                            <h3>Nuestra Historia</h3>
+                                        </div>
+                                        <div class="Paragraph_History_CTPP">
+                                            <p>
+                                                Fundado en 1973 en Pueblo Nuevo en una estructura de madera propiedad de
+                                                la
+                                                Escuela Oficial de Parrita,
+                                                con una matrícula inicial de 140 alumnos. En la administración de José
+                                                Figueres Ferrer.
+                                                En el año de 1976 la sede del colegio se trasladó a la Julieta, donde
+                                                actualmente se ubica.
+                                                Se construyeron dos pabellones más que atendían 201 estudiantes.<br>
+                                            </p>
+
+                                            <span class="hide" id="hidetext">
+                                                <p> En 1978 en la administración Carazo Odio, el colegio recibe un gran
+                                                    aporte
+                                                    del mismo gobierno y el A.I.D
+                                                    (Agencia Internacional de Desarrollo), equipando los talleres de
+                                                    acuerdo
+                                                    a
+                                                    las especialidades impartidas.
+                                                    En 2002 se abrió un nuevo código para Educación Pre vocacional, en
+                                                    la
+                                                    que se
+                                                    atiende a jóvenes con problemas
+                                                    físicos o cognitivos de toda la zona que no se pueden integrar al
+                                                    sistema
+                                                    normal.<br><br>
+
+                                                    La institución cuenta con una finca de 14 hectáreas de terreno
+                                                    cultivable y
+                                                    4 hectáreas de infraestructura.
+                                                    El terreno cultivable se distribuye de la siguiente manera: Una
+                                                    finca
+                                                    ubicada en las inmediaciones del colegio
+                                                    con un área de 4.5 hectáreas; dicho terreno esta cultivado de palma
+                                                    aceitera, y otra finca ubicada contiguo a la
+                                                    Urbanización La Guaria con una extensión de 9.5 hectáreas, también
+                                                    sembrada
+                                                    de palma aceitera.
+                                                    El área de infraestructura está distribuida en corredores, aulas,
+                                                    sala
+                                                    de
+                                                    profesores y dirección, comedor, biblioteca,
+                                                    servicios sanitarios, gimnasio, aulas de informática, talleres y
+                                                    soda.<br><br>
+
+                                                    Actualmente el CTP de Parrita cuenta con una población estudiantil
+                                                    de
+                                                    1593
+                                                    estudiantes, provenientes de las
+                                                    siguientes comunidades: Pueblo Nuevo, Parrita, Los Ángeles, Buena
+                                                    Nota,
+                                                    Sitradike, La Bandera, La Corona, El Tigre,
+                                                    Reformadores, San Juan, Las Vegas, Palo Seco, Los Sueños,
+                                                    Esterillos,
+                                                    Bejuco, Chires, La Gloria, Pirris, La Planta,
+                                                    Pocares, Quepos, Paquita, Río Seco, Las Vueltas, Bijagual, Parcelas,
+                                                    La
+                                                    Loma, Jaco, Playón entre otros.<br><br>
+
+                                                    La institución no cuenta con el número de ley con la cual se creó,
+                                                    su
+                                                    origen
+                                                    inicia en Pueblo Nuevo de Parrita,
+                                                    en el salón de actos de la Escuela Oficial de Parrita. Al ser
+                                                    otorgadas
+                                                    dos
+                                                    aulas para poder impartir lecciones,
+                                                    otros profesores laboraban en la iglesia de la comunidad y debajo de
+                                                    un
+                                                    árbol cerca del salón de actos.<br><br>
+
+                                                    La Directora de la escuela que facilito las dos aulas para dar
+                                                    inicio
+                                                    fue la
+                                                    profesora Cecilia Campos,
+                                                    se fundó el 01 de marzo de 1973 en la administración de José
+                                                    Figueres
+                                                    Ferrer
+                                                    y el ministro de Educación
+                                                    el señor Uladislao Gámez Solano con una matrícula inicial de 140
+                                                    estudiantes.<br><br>
+
+                                                    Este colegio se le dedico a ese ministro por ser la persona que
+                                                    brindo
+                                                    todo
+                                                    el apoyo para que este centro
+                                                    educativo fuera una realidad, razón por la cual lleva su nombre. Sin
+                                                    embargo, en el orden administrativo del
+                                                    Ministerio de Educación Pública se conoce como Colegio Técnico
+                                                    Profesional
+                                                    Industrial de Parrita.<br><br>
+
+                                                    El Colegio Técnico Profesional Industrial de Parrita, inició sus
+                                                    actividades
+                                                    docentes en 1973;
+                                                    en el segundo gobierno de don José Figueres Ferrer; cuatro años
+                                                    después
+                                                    se
+                                                    inauguró su edificio.<br><br>
+
+                                                    El edificio en el que hoy está el Colegio Técnico Profesional de
+                                                    Parrita
+                                                    fue
+                                                    construido por
+                                                    don Marvin Carballo Vargas quién fue el segundo director de dicha
+                                                    institución, también durante su administración
+                                                    se edificaron los "internados" que servían para dar hospedaje al
+                                                    estudiantado que vivía en zonas remotas del cantón
+                                                    tales como: Playón, El Carmen, Río Seco, entre otras.<br><br>
+
+                                                    Para el 2012 se han convertido en aulas ya que en la administración
+                                                    de
+                                                    la
+                                                    directora MSc. Doris Salazar Porras,
+                                                    se empezó a brindar el servicio de transporte estudiantil para los
+                                                    estudiantes de dichas regiones.
+                                                    Promovió así mismo, don Marvin Carballo la construcción de los
+                                                    talleres
+                                                    que
+                                                    ahora son de las especialidades de
+                                                    mecánica automotriz y aires acondicionados.
+                                                </p>
+                                            </span>
+                                            <div id="btn_text">
+                                                <div>
+                                                    <button class="read_more_btn" id="show_text_btn">Ver más</button>
+                                                </div>
+                                                <div><button class="read_less_btn hidebtn" id="hide_text_btn">Ver
+                                                        menos</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </article>
+                                </div>
+                    </section>
+
+                    <section id="location">
+                        <div class="information4">
+                            <article class="MAP_CTPP">
+                                <div class="Subtitle_MAP_CTPP">
+                                    <h3>¿Como encontarnos?</h3>
+                                </div>
+                                <div class="MAP_MAP_CTPP">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13946.597988647256!2d-84.32467421830054!3d9.
+                        52437009329696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa1a1b8bacdad51%3A0x9b186f8f7ed52675!2s
+                        Colegio%20T%C3%A9cnico%20Profesional%20de%20Parrita!5e0!3m2!1ses!2scr!4v1667868471397!5m2!1ses!2scr"
+                                        style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+            </div>
+        </div>
+        </section>
+        </div>
+        </div>
+    </main>
+    <!--Fin del main-->
+
+    <!--Inicio del footer-->
+    <footer class="Page_footer">
+        <div class="Footer_container">
+            <div class="Footer_row">
+                <div class="Footer_content">
+                    <h4>Contactos</h4>
+                    <ul class="Footer_contacts">
+                        <li>
+                            <a href="mailto:ctp.deparrita@mep.go.cr"><i class="fa fa-envelope-o ">
+                                    ctp.deparrita@mep.go.cr</i></a>
+                        </li>
+                        <li>
+                            <a href="tel:+50627794036"><i class="fa fa-phone-square"> +506 2779-4036</i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/ColegioTecnicoParrita" target="_blank"><i
+                                    class="fa fa-facebook"> Facebook</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Footer_bottom">
+                <p>
+                    &copy;Todos los derechos reservados <br>
+                    <span>Colegio Técnico Profesional de Parrita</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/index_comands.js">
+    </script>
+</body>
+
+</html>

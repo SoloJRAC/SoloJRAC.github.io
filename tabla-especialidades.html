@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home-style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="resources/ctpplogo.ico" type="favicon/ico" />
+    <!-- Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/82d23b5a3b.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body id="body">
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo_content" >
+            <div class="logo">
+                <img src="resources/ctpplogo.ico" alt="CTTP" id="CTP_logo">  
+                <div class="logo_name">
+                    Colegio 
+                    Técnico 
+                    Profesional 
+                    de Parrita
+                </div>
+            </div>
+            <div>
+                <i class="fa-solid fa-bars" id="menu_btn"></i>
+            </div>
+        </div>
+    <ul class="nav_list">
+        <li>
+            <span class="tooltip">Inicio</span>
+            <a href="home.html">
+                <i class="fa-solid fa-house-chimney" id="home_btn"></i>
+                <span class="links_name" id="inicio">Inicio</span>
+            </a>
+            
+        </li>
+        <li>
+            <span class="tooltip">Calendario</span>
+            <a href="#">
+                <i class="fa-solid fa-calendar-week" id="calendar_btn"></i>
+                <span class="links_name" id="calendario">Calendario</span>
+            </a>
+            
+        </li>
+        <li>
+            <span class="tooltip">Estudiantes</span>
+            <a href="tabla-estudiantes.html">
+                <i class="fa-solid fa-graduation-cap" id="student_btn"></i>
+                <span class="links_name" id="estudiantes">Estudiantes</span>
+            </a>
+        </li>
+        <li>
+            <span class="tooltip">Especialidades</span>
+            <a href="#">
+                <i class="fa-solid fa-screwdriver-wrench" id="quirk_btn"></i>
+                <span class="links_name" id="especialidad">Especialidades</span>
+            </a>
+        </li>
+        <li>
+            <span class="tooltip">Docentes</span>
+            <a href="#">
+                <i class="fa-solid fa-chalkboard-user" id="teacher_btn"></i>
+                <span class="links_name" id="docentes">Docentes</span>
+            </a>
+            
+        </li>
+        <li>
+            <span class="tooltip">Secciones</span>
+            <a href="#">
+                <i class="fa-solid fa-people-group" id="groups_btn"></i>
+                <span class="links_name" id="secciones">Secciones</span>
+            </a>
+             
+        </li>
+        <li>
+            <span class="tooltip">Transporte</span>
+            <a href="#">
+                <i class="fa-solid fa-bus" id="bus_btn"></i>
+                <span class="links_name" id="transporte">Transporte</span>
+            </a>
+            
+        </li>
+        <li>
+            <span class="tooltip">Comedor</span>
+            <a href="#">
+                <i class="fa-solid fa-utensils" id="dining_btn"></i>
+                <span class="links_name" id="comedor">Comedor</span>
+            </a>
+        </li>
+        <!-- Parte de cerrar sesión -->
+        <li id="log_out">
+            <span class="tooltip">Cerrar sesión</span>
+            <a href="index.html">
+                <i class="fa-solid fa-right-from-bracket" id="logout_btn"></i>
+                <span class="links_name" id="cerrar">Cerrar sesión</span>
+            </a>
+            
+        </li>
+    </ul>     
+<!-- Parte del cerrar sesión -->
+</div>
+
+
+<main class="Page_Content">
+    <header class="HeaderComponent">
+        <div class="HeaderComponent_Container" id="header2">
+                <div class="search_box">
+                    <input type="text" placeholder="¿Qué desea buscar?">
+                    <div class="search_icon">
+                        <span>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
+                </div>
+            <nav class="menu_bar">
+                <ul class="navigation">
+                    <li id="sun">
+                        <a href="#">
+                            <i class="fa-solid fa-sun "  id="sunicon"></i>
+                        </a>
+                    </li>
+                    <li id="moon" class="hide">
+                        <a href="#">
+                            <i class="fa-solid fa-moon" id="moonicon"></i>
+                        </a>
+                    </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-user" id="usericon"></i>
+                    </a>
+                </li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Tabla de estudiantes -->
+    <div class="mt-5 container table-responsive students-table">
+        <header class="p-3 table-header">
+            <h3>Estudiantes</h3>
+        </header>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Primer Apellido</th>
+                    <th scope="col">Segundo Apellido</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                      <td>Base</td>
+                      <td>de</td>
+                      <td>Datos</td>
+                      <td>God</td>
+                      <td>ZZZ</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+   
+ 
+    <script src="home_comands.js"></script>
+</main>
+</body>
+</html>
