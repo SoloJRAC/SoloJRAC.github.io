@@ -9,6 +9,9 @@ body {
     transition: 0.3s;
 }
 
+#form{
+  opacity: 0;
+}
 /* Inicio del CSS del sidebar */
 
 .sidebar {
@@ -401,7 +404,6 @@ body {
 }
 
 .popup .form_element {
-    color: #1c3c96;
     margin: 15px 0px;
 }
 
@@ -566,5 +568,9 @@ body {
 }
 .add-user-diurno {
     color: #fff;
+    cursor: pointer;
 }
-
+.search {
+    cursor: pointer;
+    color: rgb(161, 12, 12);
+}

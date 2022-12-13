@@ -1,7 +1,7 @@
 let grades = ["10", "11", "12"]
-let especialidad10 = ["Contabilidad","Ejecutivo Comercial y Servicio al Cliente", "Informatica Empresarial", "Reparación de los Sistemas de Vehiculos Livianos","Secretariado Ejecutivo","Turismo en Alimentos y Bebidas" ," Refrigeración y Aires Acondicionados","Gestión de la Producción"]
-let especialidad11 = ["Contabilidad","Ejecutivo Comercial y Servicio al Cliente", "Informatica Empresarial", "Reparación de los Sistemas de Vehiculos Livianos","Secretariado Ejecutivo","Turismo en Alimentos y Bebidas" ," Refrigeración y Aires Acondicionados"]
-let especialidad12 = ["Informatica Empresarial","Secretariado Ejecutivo","Turismo Hotelería y Eventos Especiales" ," Refrigeración y Aires Acondicionados","Billingual Secretary", "Mecanica General", "Productividad y Calidad","Bancas y Finanzas", "Electronida en Mantenimiento de Equipo de Computo"]
+let especialidad10 = ["Contabilidad","Ejecutivo Comercial y Servicio al Cliente", "Informatica Empresarial", "Reparación de los Sistemas de Vehiculos Livianos","Secretariado Ejecutivo"," Refrigeración y Aires Acondicionados","Operaciones en Emprezas de Alojamiento" ]
+let especialidad11 = ["Contabilidad","Ejecutivo Comercial y Servicio al Cliente", "Informatica Empresarial", "Reparación de los Sistemas de Vehiculos Livianos","Secretariado Ejecutivo","Turismo en Alimentos y Bebidas" ,"Operaciones en Empresas de Alojamiento", "Productividad y Calidad"]
+let especialidad12 = ["Informatica Empresarial","Secretariado Ejecutivo","Turismo en Alimentos y Bebidas" ," Refrigeración y Aires Acondicionados","Reparación de los Sistemas de Vehiculos Livianos", "Electronida en Mantenimiento de Equipo de Computo", "Informatica en Redes", "Contabilidad"]
 let combobox12 = document.getElementById("grade");
 let combobox22 = document.getElementById("Especialidad");
 let text1 = document.getElementById("Especialidad2");

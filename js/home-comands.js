@@ -68,3 +68,4 @@ else if(time>=12 && 18>time){
 else{
     document.getElementById("saludo").innerHTML="Buenas noches &#127769";
 }
+

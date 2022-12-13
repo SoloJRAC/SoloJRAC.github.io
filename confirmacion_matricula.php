@@ -1,7 +1,12 @@
-
 <?php
-include("Home.html");
+
 $cedula = $_POST["caja_valor"];
+$password = $_POST["password"];
+
+if ($password == null) {
+    header("location:index.html");
+ }
+ include("Home.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,10 +25,19 @@ $cedula = $_POST["caja_valor"];
   </style>
 <form action="pdf.php" method="POST" id="form">
 <input type="text" name="caja_valor" id="caja_valor" value="<?php echo $cedula ?>">
-<button id="click" class="click" type="submit" ></button>
+<input type="text" name="password" id="caja_valor" value="<?php echo $password; ?>">
+<button id="click20" class="click" type="submit" ></button>
 </form>
 </body>
-</html>
+<form action="Home.php" method="POST" id="form">
+<input type="text" name="password" id="caja_valor" value="<?php echo $password; ?>">
+<button id="click01" class="click" type="submit" ></button>
+</form>
+<script>
+	cancel.onclick=function(){
+		click01.click();
+	};
+</script>
 
 <script>
 swal("Excelente!", "El Estudiante '<?php echo $cedula ?>' ha sido Matriculado!", "success", {
@@ -41,10 +55,14 @@ swal("Excelente!", "El Estudiante '<?php echo $cedula ?>' ha sido Matriculado!",
   switch (value) {
 
     case "catch":
-      click.click();
+      click20.click();
+      window.open("Home.php");
       break;
  
     default:
   }
 });
 </script>
+</html>
+
+

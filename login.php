@@ -1,8 +1,8 @@
 <?php
 $servidor ="localhost";
-$usuario="root";
-$contraseña="";
-$BD="matricula";
+$usuario="vdhkgimy_admin";
+$contraseña="Aarce0908";
+$BD="vdhkgimy_Matricula";
 
 $conection = mysqli_connect($servidor, $usuario, $contraseña, $BD);
 if(!$conection){
@@ -17,24 +17,31 @@ $password=$_POST['password'];
 $consulta= "SELECT  `password` FROM `usuarios permitidos` WHERE`User`='$user' && `password`='$password'";
 $datos2=mysqli_query($conection,$consulta);
 $passwordDB=mysqli_fetch_column($datos2);
-echo $passwordDB;
-if($passwordDB){
-     header("location:Home.html"); 
-    echo $passwordDB;
-    
+if($passwordDB){?>
+    <style>
+#form{
+  opacity: 0;
+  position: absolute;
+}
+  </style>
+    <form action="Home.php" method="POST" id="form">
+<input type="text" name="password" id="caja_valor" value="<?php echo $password ?>">
+<button id="click" class="click" type="submit" ></button> 
+<script>
+        click.click();
+    </script>
+<?php
 }else{
     include("index.html");?>
-    <p class="err">Contraseña o Usuario Incorrecto</p>
-    <style>.err{
-    text-align: center;
-    color: #C1272D;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 2vmax ;
-    transition: 0.3s;
-}</style>
-<script>
-    document.querySelector(".err").innerHTML="Usuario o Contraseña incorrectos";
-</script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script>
+    swal({
+  title: "ERROR",
+  text: "Contraseña o Usuario incorrectos",
+  icon: "error",
+  
+});
+   </script>
 <?php
 }
 ?>
