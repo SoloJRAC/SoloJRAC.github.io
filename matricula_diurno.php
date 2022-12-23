@@ -203,9 +203,9 @@ if (null == $AsistentLastName) {
 /* Registro de datos */
 /* Conexion */
 $servidor ="localhost";
-$usuario="vdhkgimy_admin";
-$contraseña="Aarce0908";
-$BD="vdhkgimy_Matricula";
+$usuario="root";
+$contraseña="";
+$BD="vdhkgimy_matricula";
 
 $conection = mysqli_connect($servidor, $usuario, $contraseña, $BD);
 if(!$conection){
@@ -246,7 +246,7 @@ mysqli_query($conection,$consulta9);
 $consulta10= "INSERT INTO info_personal_encargado (Cedula_est,Cedula_encargado,Nom1,Nom2,Ap1,Ap2,Nacionalidad,Sexo) VALUES ('$studentID','$managerID','$mName1','$mName2','$mLastName1','$mLastName2','$managerCountry','$managerGender')";
 mysqli_query($conection,$consulta10);
 /* info_contacto_encargado */
-$consulta11= "INSERT INTO info_contacto_encargado (Cedula_encargado,Correo,Tel1,Tel2) VALUES ('$managerID','$mEmail','$mPhone','$mPhone2')";
+$consulta11= "INSERT INTO info_contacto_encargado (Cedula_est,Correo,Tel1,Tel2) VALUES ('$studentID','$mEmail','$mPhone','$mPhone2')";
 mysqli_query($conection,$consulta11);
 
 /* Datos Asistente */

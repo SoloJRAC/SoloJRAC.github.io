@@ -12,9 +12,9 @@ if ($password == null) {
 $cedula = $_POST["caja_valor"];
 /* Conexion */
 $servidor ="localhost";
-$usuario="vdhkgimy_admin";
-$contraseña="Aarce0908";
-$BD="vdhkgimy_Matricula";
+$usuario="root";
+$contraseña="";
+$BD="vdhkgimy_matricula";
 
 $conection = mysqli_connect($servidor, $usuario, $contraseña, $BD);
 /*  Extraccionde datos*/

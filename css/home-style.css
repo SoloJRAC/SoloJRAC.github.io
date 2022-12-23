@@ -574,3 +574,27 @@ body {
     cursor: pointer;
     color: rgb(161, 12, 12);
 }
+
+
+/* CSS para el pop de home */
+
+
+.btn-primary {
+    background-color: #1c3c96 !important;
+}
+
+.btn-primary {
+    border-color: #1c3c96 !important;
+
+}
+
+/* CSS para el pop de home */
+
+/* CSS para la tabla de estudiantes */
+
+.table-header {
+    background-color: #1c3c96;
+}
+
+/* CSS para la tabla de estudiantes */
+

@@ -14,7 +14,7 @@ $cedula = $_POST["caja_valor"];
 $servidor ="localhost";
 $usuario="root";
 $contraseña="";
-$BD="matricula2";
+$BD="vdhkgimy_matricula";
 
 $conection = mysqli_connect($servidor, $usuario, $contraseña, $BD);
 /*  Extraccionde datos*/
@@ -123,9 +123,9 @@ $Ap1_encargado = mysqli_fetch_column($Ap1_encargado);
 $Ap2_encargado =mysqli_query($conection,"SELECT  Ap2 FROM info_personal_encargado WHERE Cedula_est='".$cedula."'");
 $Ap2_encargado = mysqli_fetch_column($Ap2_encargado);
 /* Datos contacto encargado */
-$Tel1 =mysqli_query($conection,"SELECT  Tel1 FROM info_contacto_encargado WHERE Cedula_encargado='".$Cedula_encargado."'");
+$Tel1 =mysqli_query($conection,"SELECT  Tel1 FROM info_contacto_encargado WHERE Cedula_est='".$cedula."'");
 $Tel1 = mysqli_fetch_column($Tel1);
-$Tel2 =mysqli_query($conection,"SELECT Tel2 FROM info_contacto_encargado WHERE Cedula_encargado='".$Cedula_encargado."'");
+$Tel2 =mysqli_query($conection,"SELECT Tel2 FROM info_contacto_encargado WHERE Cedula_est='".$cedula."'");
 $Tel2 = mysqli_fetch_column($Tel2);
 
 
