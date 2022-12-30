@@ -205,17 +205,13 @@ body {
 .HeaderComponent_Container { /* barra horizontal de navegación */
     height: 70px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background: rgb(255, 255, 255);
     border-bottom: 1px solid #000;
     transition: 0.3s;
 }
 
-.menu_bar {
-    display: flex;
-    align-items: center;
-}
 
 .navigation {
     display: flex;

@@ -384,7 +384,7 @@ if ($password == null) {
 						<!--Student Phone Number-->
 						<div class="col-12 col-lg-3">
 							<label for="sPhone" class="binding">Número Celular</label>
-							<input class="form-control"   type="tel" id="studentPhone" name="sPhone" autocomplete="off" spellcheck="false" tabindex="0" autocapitalize="none" aria-label="Número Celular"  >
+							<input class="form-control" type="tel" id="studentPhone" name="sPhone" autocomplete="off" spellcheck="false" tabindex="0" autocapitalize="none" aria-label="Número Celular">
 						</div>
 						<!-- First general row -->
 

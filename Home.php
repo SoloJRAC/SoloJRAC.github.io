@@ -1,15 +1,4 @@
-<?php
-$password = $_POST["password"];
 
-if ($password == null) {
-?>
-    <script>
-        window.location.href = "index.html"
-    </script>
-
-<?php
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,14 +114,6 @@ if ($password == null) {
     <main class="Page_Content">
         <header class="HeaderComponent">
             <div class="HeaderComponent_Container" id="header2">
-                <div class="search_box">
-                    <input type="text" placeholder="¿Qué desea buscar?">
-                    <div class="search_icon">
-                        <span>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </span>
-                    </div>
-                </div>
                 <nav class="menu_bar" method="POST">
                     <ul class="navigation">
                         <li id="sun">
@@ -196,7 +177,12 @@ if ($password == null) {
             <img src="resources/pexels-jacob-colvin-1757363.jpg" alt="Colegio">
         </div>
 
-        
+        <style>
+            #form {
+                opacity: 0;
+                position: absolute;
+            }
+        </style>
         <form action="matricula.php" method="POST" id="form">
             <input type="text" name="password" id="caja_valor" value="<?php echo $password ?>">
             <button id="click" class="click" type="submit"></button>
@@ -230,7 +216,6 @@ if ($password == null) {
             <input type="text" name="password" id="caja_valor" value="<?php echo $password ?>">
             <button id="click8" class="click" type="submit"></button>
         </form>
-
 
         <script>
             home_btn.onclick = function() {

@@ -1,13 +1,4 @@
-<?php
 
-$cedula = $_POST["caja_valor"];
-$password = $_POST["password"];
-
-if ($password == null) {
-    header("location:index.html");
- }
- include("Home.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

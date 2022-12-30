@@ -1,40 +1,29 @@
 <?php 
 
-$password = $_POST["password"];
-
-if ($password == null) {
-    ?><script>
-        window.location.href = "index.html"
-    </script>
-    
-    <?php
- } 
-
-if ($password == null) {
-    header("location:index.html");
- }
 /* Verificacion de datos */
+$Cedula_est=$_POST['Cedula_est'];
+
 $studentID=$_POST['studentID'];
 if (null == $studentID) {
-    header("location:matricula.php"); 
+    header("location:editar.php"); 
 }else {
     $studentID = strtoupper($studentID);
 }
 $country_est=$_POST['country'];
 if (null == $country_est) {
-    include("location:matricula.php"); 
+    include("location:editar.php"); 
 }
 $sex= $_POST['sex'];
 if (null == $sex) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $birthday=$_POST['birthday'];
 if (null == $birthday) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $sLastName1= $_POST['sLastName1'];
 if (null == $sLastName1) {
-    include("location:matricula.php");
+    include("location:editar.php");
 } else {
     $sLastName1 = strtoupper($sLastName1);
 }
@@ -46,7 +35,7 @@ if (null == $sLastName2) {
 }
 $sName1= $_POST['sName1'];
 if (null == $sName1) {
-    include("location:matricula.php"); 
+    include("location:editar.php"); 
 }else {
     $sName1 = strtoupper($sName1);
 }
@@ -78,11 +67,11 @@ if (null == $sPhone) {
 }
 $canton=$_POST['canton'];
 if (null == $canton) {
-    include("location:matricula.php"); 
+    include("location:editar.php"); 
 }
 $district= $_POST['district'];
 if (null == $district) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $route= $_POST['route'];
 if (null == $route) {
@@ -90,12 +79,12 @@ if (null == $route) {
 }
 $level= $_POST['level'];
 if (null == $level) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 
 $studentAddress=$_POST['studentAddress'];
 if (null == $studentAddress) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $studentCondition= $_POST['studentCondition'];
 if (null == $studentCondition) {
@@ -103,11 +92,11 @@ if (null == $studentCondition) {
 }
 $adequacy=$_POST['adequacy'];
 if (null == $adequacy) {
-    include("location:matricula.php"); 
+    include("location:editar.php"); 
 }
 $yearAcademy= $_POST['yearAcademy'];
 if (null == $yearAcademy) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $sIMAS=$_POST['sIMAS'];
 if (null == $sIMAS) {
@@ -123,7 +112,7 @@ if (null == $sTRANSPORTE) {
 }
 $sCOMEDOR= $_POST['sCOMEDOR'];
 if (null == $sCOMEDOR) {
-    $sCOMEDOR =0;
+    $sCOMEDOR = 0;
 }
 $iUSAGE=$_POST['iUSAGE'];
 if (null == $iUSAGE) {
@@ -139,22 +128,22 @@ if (null == $Religion) {
 }
 $managerID=$_POST['managerID'];
 if (null == $managerID) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }else {
     $managerID = strtoupper($managerID);
 }
 $managerCountry= $_POST['managerCountry'];
 if (null == $managerCountry) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $managerGender=$_POST['managerGender'];
 if (null == $managerGender) {
-    include("location:matricula.php");
+    include("location:editar.php");
     echo"se vuelve al inicio";
 }
 $mLastName1= $_POST['mLastName1'];
 if (null == $mLastName1) {
-    include("location:matricula.php"); 
+    include("location:editar.php"); 
 }else {
     $mLastName1 = strtoupper($mLastName1);
 }
@@ -166,7 +155,7 @@ if (null == $mLastName2) {
 }
 $mName1= $_POST['mName1'];
 if (null == $mName1) {
-    include("location:matricula.php"); 
+    include("location:editar.php"); 
 }else {
     $mName1 = strtoupper($mName1);
 }
@@ -182,83 +171,74 @@ if (null == $mEmail) {
 }
 $mPhone=$_POST['mPhone'];
 if (null == $mPhone) {
-    include("location:matricula.php");
+    include("location:editar.php");
 }
 $mPhone2=$_POST['mPhone2'];
 if (null == $mPhone2) {
     $mPhone2 = " ";
 }
-$AsistentName= $_POST['AsistentName'];
-if (null == $AsistentName) {
-    include("location:matricula.php"); 
-}else {
-    $AsistentName = strtoupper($AsistentName);
-}
-$AsistentLastName= $_POST['AsistentLastName'];
-if (null == $AsistentLastName) {
-    include("location:matricula.php"); 
-}else {
-    $AsistentLastName = strtoupper($AsistentLastName);
-}
+
 /* Registro de datos */
 /* Conexion */
-include ("conexion.php");
+$servidor ="localhost";
+$usuario="root";
+$contraseña="";
+$BD="vdhkgimy_matricula";
 
+$conection = mysqli_connect($servidor, $usuario, $contraseña, $BD);
 if(!$conection){
     echo "fallo en la conection";
     die("conection failed: ".mysqli_connect_error());
 }
-else{$fechaActual = date('y/m/d');
+else{
 /* Datos personales estudiante */
- $consulta2= 
- "INSERT INTO info_personal_est (Cedula_est, Nom1, Nom2, Ap1, Ap2, Nacionalidad, Fecha_Nacimiento, Sexo) VALUES ('$studentID','$sName1','$sName2','$sLastName1','$sLastName2','$country_est','$birthday','$sex')";
+ $consulta2= "UPDATE `info_personal_est` SET `Cedula_est`='$studentID',`Nom1`='$sName1',`Nom2`='$sName2',`Ap1`='$sLastName1',`Ap2`='$sLastName2',`Nacionalidad`='$country_est',`Fecha_Nacimiento`='$birthday',`Sexo`='$sex' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta2); 
 /* Datos Generales */
 /* info_contacto_est */
-$consulta3= "INSERT INTO  info_contacto_est (Cedula_est, Corre_mep,Correo,Num_telefono) VALUES ('$studentID','$sEmailMEP','$sEmail','$sPhone')";
+$consulta3= "UPDATE `info_contacto_est` SET `Corre_mep`='$sEmailMEP',`Correo`='$sEmail',`Num_telefono`='$sPhone'WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta3); 
 /* info_ubicacion */
- $consulta4= "INSERT INTO info_ubicacion (Cedula_est, Canton, Distrito, Ruta) VALUES ('$studentID','$canton','$district','$route')";
+ $consulta4= "UPDATE `info_ubicacion` SET `Canton`='$canton',`Distrito`='$district',`Direccion_est`='$studentAddress',`Ruta`='$route' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta4); 
 /* permisos */
- $consulta5= "INSERT INTO permisos (Cedula_est, Uso_imagen, Salida,Religion) VALUES ('$studentID',$iUSAGE,$lINSTITUTION,$Religion)";
+ $consulta5= "UPDATE `permisos` SET `Uso_imagen`='$iUSAGE',`Salida`='$lINSTITUTION',`Religion`='$Religion' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta5); 
 /* becas */
-$consulta6= "INSERT INTO becas (Cedula_est, IMAS, Transporte, Comedor) VALUES ('$studentID',$sIMAS,$sTRANSPORTE,$sCOMEDOR)";
+$consulta6= "UPDATE `becas` SET `IMAS`='$sIMAS',`Transporte`='$sTRANSPORTE',`Comedor`='$sCOMEDOR' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta6); 
 /* comentarios_est */
-$consulta7= "INSERT INTO comentarios_est (Cedula_est,comentarios_medicos, comentarios_personales) VALUES ('$studentID','$medicalComments','$studentComments')";
+$consulta7= "UPDATE `comentarios_est` SET `comentarios_medicos`='$medicalComments',`comentarios_personales`='$studentComments' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta7); 
 /* conect matricula */
-
-$consulta8= "INSERT INTO conect_matricula (Cedula_est,Tipo_matricula, Fecha) VALUES ('$studentID','Diurno','$fechaActual')";
-mysqli_query($conection,$consulta8); 
+/* $consulta8= "UPDATE `conect_matricula` SET `Cedula_est`='$studentID' WHERE `Cedula_est`='$studentID'";//Dar la posibilidad de cambiar de diurno a nocturno
+mysqli_query($conection,$consulta8); */
 /* info_academica */
-$consulta9= "INSERT INTO info_academica (Cedula_est,Grado,Estado,Adecuacion,Año,Poliza) VALUES ('$studentID',$level,'$studentCondition','$adequacy',$yearAcademy,'$sPOLIZA')";
+$consulta9= "UPDATE `info_academica` SET `Grado`='$level',`Estado`='$studentCondition',`Adecuacion`='$adequacy',`Año`='$yearAcademy',`Poliza`='$sPOLIZA' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta9);
 
 /* Datos encargado */
 /* Informacion personal */
-$consulta10= "INSERT INTO info_personal_encargado (Cedula_est,Cedula_encargado,Nom1,Nom2,Ap1,Ap2,Nacionalidad,Sexo) VALUES ('$studentID','$managerID','$mName1','$mName2','$mLastName1','$mLastName2','$managerCountry','$managerGender')";
+$consulta10= "UPDATE `info_personal_encargado` SET `Cedula_encargado`='$managerID',`Nom1`='$mName1',`Nom2`='$mName2',`Ap1`='$mLastName1',`Ap2`='$mLastName2',`Nacionalidad`='$managerCountry',`Sexo`='$managerGender' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta10);
 /* info_contacto_encargado */
-$consulta11= "INSERT INTO info_contacto_encargado (Cedula_est,Correo,Tel1,Tel2) VALUES ('$studentID','$mEmail','$mPhone','$mPhone2')";
+$consulta11= "UPDATE `info_contacto_encargado` SET `Correo`='$mEmail',`Tel1`='$mPhone',`Tel2`='$mPhone2' WHERE `Cedula_est`='$Cedula_est'";
 mysqli_query($conection,$consulta11);
 
 /* Datos Asistente */
-$consulta12= "INSERT INTO info_asistente (Cedula_est,Nombre,Apellido) VALUES ('$studentID','$AsistentName','$AsistentLastName')";
-mysqli_query($conection,$consulta12);
+/* $consulta12= "UPDATE `info_asistente` SET `Cedula_est`='$studentID' WHERE `Cedula_est`='$studentID'";
+mysqli_query($conection,$consulta12); */
 
 $technical= $_POST['technical'];
 if (null == $technical) {
     $technical = "--- ";
 } else {
-    $consulta13= "INSERT INTO especialidades (Cedula_est,Especialidad) VALUES ('$studentID','$technical')";
+    $consulta13= "UPDATE `especialidades` SET `Especialidad`='$technical' WHERE `Cedula_est`='$Cedula_est'";
     mysqli_query($conection,$consulta13);
 }}
-echo "final"
+
 ?>
-<form action="confirmacion_matricula.php" method="POST" id="form">
+<form action="update_confirmation.php" method="POST" id="form">
 <input type="text" name="caja_valor" id="caja_valor" value="<?php echo $studentID ?>">
 <input type="text" name="password" id="caja_valor" value="<?php echo $password ?>">
 <button id="click" class="click" type="submit" ></button>
