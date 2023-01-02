@@ -16,7 +16,7 @@ if ($password == null) {
 /* Verificacion de datos */
 $studentID=$_POST['studentID'];
 if (null == $studentID) {
-    header("location:matricula.php"); 
+    
 }else {
     $studentID = strtoupper($studentID);
 }
